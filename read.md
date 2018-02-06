@@ -1,70 +1,49 @@
-## setup for the minerals project
+Allow filtering by the first letter of the mineral name.
+Add links for each letter of the alphabet. This should be added to the layout 
+template so that it appears on every page. When a letter is clicked, a list of
+minerals that start with that letter should be displayed in the list view. 
+The letter of the alphabet currently being displayed should be bolded. 
+In the details view, no letter should be bolded. On the homepage, 
+select ‘A’ by default.
 
-Download the project files. We've supplied these files for you to use:
-data/minerals.json is a JSON file that contains details about each mineral.
-data/images are images of the minerals referenced in minerals.json.
-example/index.html is an HTML file that shows the structure of the list view. 
-This is just a concrete example. It isn’t meant to be used as a file in the project. 
-When you’re done, your pages should look like this though.
-example/detail.html is an HTML file that shows the structure of the mineral 
-details view. This is just a concrete example. It isn’t meant to be used as a 
-ile in the project. When you’re done, your pages should look like this.
-example/css/global.css is the CSS style sheet for the site. Look at the HTML 
-files to see how these styles are used.
-list-preview.png shows how the list page should look when completed.
-detail-preview.png shows how the detail page should look when completed.
+Allow text search.
+Add a search box and button. The search box and button should be implemented 
+as a form. When the search button is clicked, the site will search for minerals 
+whose name contains the search text. The names of the minerals that match the 
+search will be displayed in the list view. Add the search form to the layout 
+template so that searching can be performed from any page in the site.
 
+Allow filtering by group.
+Add the ability to filter the list of minerals by adding links to these groups 
+on the left side of the layout template. Clicking a group name, displays a
+list of all of the minerals in the database that are in that group. 
+The group name being displayed should be bolded. In the details view, 
+no group name should be bolded.
+Silicates
+Oxides
+Sulfates
+Sulfides
+Carbonates
+Halides
+Sulfosalts
+Phosphates
+Borates
+Organic Minerals
+Arsenates
+Native Elements
+Other
 
-## Project Instructions
+Optimize database queries
+Use the django-debug-toolbar to check that queries to the database take no 
+longer than 10ms to complete.
 
-Use SQLite to store the mineral data.
-Open minerals.json and look at the attributes of a mineral. Write a model to 
-store the mineral data. Each mineral can have the following attributes. 
-Some minerals will not have all of these attributes.
-
-name
-image filename
-image caption
-category
-formula
-strunz classification
-color
-crystal system
-unit cell
-crystal symmetry
-cleavage
-mohs scale hardness
-luster
-streak
-diaphaneity
-optical properties
-refractive index
-crystal habit
-specific gravity
-
-Write a script to that constructs a mineral model instance for each mineral in 
-minerals.json and saves them to a SQLite database.
-
-Create a layout template for the app.
-The layout template should contain the title of the site. 
-You can name the site anything you want.
-
-Create a template and view to show the names of all the minerals.
-This view should display the name of each mineral in the database. 
-Each name in the list is a link to the detail view of the mineral. 
-See index.html and list-preview.png
-
-Create a mineral details template and view.
-The detail view should display the details of the selected mineral.
-The details template should contain the mineral’s name, image, and image caption. 
-
-Other details that are available about the mineral should be displayed 
-below the image caption. See detail.html and detail-preview.png.
-
-Use a template filter to display the name of each attribute in title case.
-
-Write unit tests to test that each view is displaying the correct information.
+Unit test the app.
+Write unit tests to test that each view is displaying the correct information. 
+Write unit tests to test that the models, classes, and other functions 
+behave as expected.
 Make the templates match the style used in the example files.
+Look at the example HTML files and global.css to determine the 
+styles used in the pages.
 
-Look at the example HTML files and global.css to determine which id and 
-class attributes to use on the elements in the pages you generate.
+Coding Style
+Make sure your coding style complies with PEP 8.
